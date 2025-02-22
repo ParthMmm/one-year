@@ -24,7 +24,7 @@
 			{date.getHours()}:{pad(date.getMinutes())}:{pad(date.getSeconds())}
 		</span>
 
-		<Button styles="text-neutral-400 px-0 hover:text-green-500" onclick={resetDates}>Reset</Button>
+		<Button styles="text-neutral-400  px-0 hover:text-green-500" onclick={resetDates}>Reset</Button>
 	</div>
 	<Grid />
 </div>
