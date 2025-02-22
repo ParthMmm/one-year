@@ -5,6 +5,7 @@
 	import { cn } from '../utils';
 	import Tooltip from './ui/Tooltip.svelte';
 	import { dates } from '../state.svelte';
+	import { fade } from 'svelte/transition';
 	dayjs.extend(dayOfYear);
 
 	let currDay = dayjs(Date.now()).dayOfYear();
@@ -19,7 +20,7 @@
 	}
 </script>
 
-<div class="mx-auto grid grid-cols-12 grid-rows-[53] items-center gap-4">
+<div class="mx-auto grid grid-cols-12 grid-rows-[53] items-center gap-4" transition:fade>
 	{#each dates as day, i}
 		<Tooltip side={i % 12 < 6 ? 'left' : 'right'} sideOffset={16}>
 			{#snippet trigger({ props })}
@@ -27,7 +28,7 @@
 					{...props}
 					aria-label={day.date}
 					class={cn(
-						'h-4 w-4 rounded-full border border-neutral-500 bg-transparent',
+						'focus-visble:outline-offset-4 h-4 w-4 rounded-full border border-neutral-500 bg-transparent transition-colors focus-visible:outline focus-visible:outline-green-500',
 						day.filled ? 'border-0 bg-green-500' : '',
 						currDay === day.id ? 'animate-pulse border-green-500' : ''
 					)}

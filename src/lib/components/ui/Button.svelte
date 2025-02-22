@@ -10,7 +10,7 @@
 
 <button
 	class={cn(
-		'inline-flex h-8 items-center justify-center  rounded-md px-4 py-2 font-medium transition-colors',
+		'focus-visble:outline-offset-4 inline-flex h-8 items-center  justify-center rounded-md px-4 py-2 font-medium transition-colors focus-visible:outline focus-visible:outline-green-500 ',
 		styles
 	)}
 	{onclick}

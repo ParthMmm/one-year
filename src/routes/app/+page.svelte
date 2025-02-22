@@ -2,7 +2,7 @@
 	import { SvelteDate } from 'svelte/reactivity';
 	import Grid from '../../lib/components/Grid.svelte';
 	import Button from '../../lib/components/ui/Button.svelte';
-	import { dates, resetDates } from '../../lib/state.svelte';
+	import { resetDates } from '../../lib/state.svelte';
 	let date = new SvelteDate();
 
 	const pad = (n: number) => (n < 10 ? '0' + n : n);
