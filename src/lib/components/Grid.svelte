@@ -28,10 +28,7 @@
 	}
 </script>
 
-<div
-	class="mx-auto grid grid-cols-14 grid-rows-[53] items-center gap-4 md:grid-cols-12"
-	transition:fade
->
+<div class="mx-auto grid grid-cols-14 items-center gap-4 md:grid-cols-12" transition:fade>
 	{#each dates as day, i}
 		<Tooltip side={i % 12 < 6 ? 'left' : 'right'} sideOffset={16}>
 			{#snippet trigger({ props })}
@@ -40,8 +37,9 @@
 					aria-label={day.date}
 					class={cn(
 						'focus-visble:outline-offset-4 flex h-2.5 w-2.5 items-center justify-center rounded-full   transition-colors focus-visible:outline focus-visible:outline-green-500 sm:h-3  sm:w-3 md:h-4 md:w-4',
-						day.filled ? 'border-0 bg-green-500' : 'bg-neutral-500/50',
-						currDay === day.id ? 'animate-pulse border border-green-700' : 'border-0'
+
+						currDay === day.id ? 'animate-pulse bg-neutral-300 ' : 'bg-neutral-500/50',
+						day.filled ? 'border-0 bg-green-500' : ''
 					)}
 					onmouseenter={() => handleMouseEnter(day.id)}
 					onmousedown={() => (mouseDown = true)}
