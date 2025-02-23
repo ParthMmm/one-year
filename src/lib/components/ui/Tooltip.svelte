@@ -29,8 +29,9 @@
 
 	let {
 		open = $bindable(false),
-		delayDuration = 300,
+		// delayDuration = 300,
 		disableHoverableContent = false,
+
 		side = 'top',
 		sideOffset = 8,
 		align = 'center',
@@ -43,7 +44,7 @@
 	}: Props = $props();
 </script>
 
-<Tooltip.Root bind:open {delayDuration} {disableHoverableContent}>
+<Tooltip.Root bind:open {disableHoverableContent}>
 	<Tooltip.Trigger>
 		{#snippet child({ props })}
 			{@render trigger({ props })}

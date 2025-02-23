@@ -1,6 +1,7 @@
 <script lang="ts">
 	import dayjs from 'dayjs';
 	import dayOfYear from 'dayjs/plugin/dayOfYear';
+	import { MediaQuery } from 'svelte/reactivity';
 
 	import { cn } from '../utils';
 	import Tooltip from './ui/Tooltip.svelte';
@@ -21,14 +22,15 @@
 		}
 	}
 
-	function handleMouseEnter(id: number) {
+	function handleMouseEnter(id: number, event: MouseEvent) {
 		if (mouseDown) {
 			toggleDate(id);
+			// event?.stopPropagation();
 		}
 	}
 </script>
 
-<div class="mx-auto grid grid-cols-14 items-center gap-4 md:grid-cols-12" transition:fade>
+<div class="mx-auto grid grid-cols-14 items-center gap-3 md:grid-cols-12 md:gap-4" transition:fade>
 	{#each dates as day, i}
 		<Tooltip side={i % 12 < 6 ? 'left' : 'right'} sideOffset={16}>
 			{#snippet trigger({ props })}
@@ -41,7 +43,7 @@
 						currDay === day.id ? 'animate-pulse bg-neutral-300 ' : 'bg-neutral-500/50',
 						day.filled ? 'border-0 bg-green-500' : ''
 					)}
-					onmouseenter={() => handleMouseEnter(day.id)}
+					onmouseenter={(event) => handleMouseEnter(day.id, event)}
 					onmousedown={() => (mouseDown = true)}
 					onmouseup={() => (mouseDown = false)}
 					onclick={() => toggleDate(day.id)}

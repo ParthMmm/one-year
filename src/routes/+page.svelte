@@ -18,11 +18,6 @@
 	});
 </script>
 
-<svelte:head>
-	<title>One Year</title>
-	<meta name="description" content="One year" />
-</svelte:head>
-
 <div>
 	<h1 class="font-mono text-2xl font-black text-white">One Year</h1>
 	<div class="flex flex-row justify-between pb-1 align-middle">
