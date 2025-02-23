@@ -29,7 +29,7 @@
 
 	let {
 		open = $bindable(false),
-		delayDuration = 200,
+		delayDuration = 300,
 		disableHoverableContent = false,
 		side = 'top',
 		sideOffset = 8,
@@ -43,10 +43,6 @@
 	}: Props = $props();
 </script>
 
-<!--
- Ensure you have a `Tooltip.Provider` component wrapping
- your root layout content
--->
 <Tooltip.Root bind:open {delayDuration} {disableHoverableContent}>
 	<Tooltip.Trigger>
 		{#snippet child({ props })}
