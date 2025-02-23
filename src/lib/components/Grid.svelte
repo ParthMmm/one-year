@@ -39,9 +39,9 @@
 					{...props}
 					aria-label={day.date}
 					class={cn(
-						'focus-visble:outline-offset-4 flex h-2.5 w-2.5 items-center justify-center rounded-full border-0  border-neutral-500 bg-neutral-500/50 transition-colors focus-visible:outline focus-visible:outline-green-500 sm:h-3  sm:w-3 md:h-4 md:w-4',
-						day.filled ? ' border-0 bg-green-500' : '',
-						currDay === day.id ? 'animate-pulse border border-blue-500 bg-transparent' : ''
+						'focus-visble:outline-offset-4 flex h-2.5 w-2.5 items-center justify-center rounded-full   transition-colors focus-visible:outline focus-visible:outline-green-500 sm:h-3  sm:w-3 md:h-4 md:w-4',
+						day.filled ? 'border-0 bg-green-500' : 'bg-neutral-500/50',
+						currDay === day.id ? 'animate-pulse border border-green-700' : 'border-0'
 					)}
 					onmouseenter={() => handleMouseEnter(day.id)}
 					onmousedown={() => (mouseDown = true)}
